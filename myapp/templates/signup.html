@@ -1,0 +1,93 @@
+  
+
+    {% block headerinclude %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {% endblock headerinclude %}
+
+     {% block footerinclude %}
+    <script>
+      // function myFunction(){
+      //  var x = document.getElementById("id-department").value;
+    //      // alert(x)
+    //      if (x == 'CS')
+    //        document.getElementById("id-course").innerHTML = 'BSCS'
+    //      else
+    //        document.getElementById("id-course").innerHTML = 'BSIT'
+
+    //    } 
+      </script>
+      {% endblock footerinclude %}
+    
+     {% block content %}
+    <div style='background-color:#ffff00'>
+      <center><p style="color:white"><h3>Customer Registration Page</h3></p></center>
+    </div>
+    
+    <hr><hr>
+    <form id = "form1" action="" method="POST" autocomplete="off" enctype="multipart/form-data">
+            {% csrf_token %}
+      <div class="form-group">
+        <div class = "container">
+          <div class = "row">
+            <div class =  "col-sm-6">
+              <label>Name</label>
+            </div>  
+          </div>
+          <div class = "row">
+            <div class = "col-sm-4">
+              <input type="text" class="form-control" id="id-firstname" name = "firstname" placeholder="Firstname" >
+            </div>
+            <div class = "col-sm-4">
+              <input type="text" class="form-control" id="id-middlename" name = "middlename" placeholder="Middlename">
+            </div>
+            <div class = "col-sm-4">
+              <input type="text" class="form-control" id="id-lastname" name = "lastname" placeholder="Lastname" >
+          </div>
+          </div>
+          <br>
+          <div class = "row">
+            <div class =  "col-sm-6">
+              <label>INFO</label>
+            </div>  
+          </div>
+          <div class = "row">
+            <div class = "col-sm-6">
+              <input type="text" class="form-control" id="id-sex" name= "sex" placeholder="Sex">
+            </div>
+            <div class = "col-sm-6">
+              <input type="text" class="form-control" id="id-age" name = "age" placeholder="Age">
+            </div>
+          
+          </div>
+          <br>
+          <div class = "row">
+            <div class = "col-sm-6">
+              <label>Birthdate</label>
+              <input type="date" class="form-control" id="id-bdate" name = "bdate">
+            </div>
+            <div class = "col-sm-6">
+              <label>Birthplace</label>
+              <input type="text" class="form-control" id="id-bplace" name = "bplace" placeholder="Birthplace">
+            </div>
+          </div>
+          <br>
+          <div class = "row">
+            <div class = "col-sm-6">
+              <label>Email</label>
+              <input type="text" class="form-control" id="id-emailaddress" name = "emailaddress" placeholder="Email Address">
+            </div>
+            <div class = "col-sm-6">
+              <label>Phone Number</label>
+              <input type="text" class="form-control" id="id-phone" name= "phone" placeholder="Phone Number">
+            </div>
+          </div>
+      </div>
+      </div>
+     
+      <br><br>
+     <center>
+      <a type = "button" class="btn btn-secondary" id="id_registration" href="{% url 'myapp:home_view' %}" >CANCEL</a>
+      <button type="submit" class="btn btn-primary">Submit</button>
+     </center>
+    </form>
+    {% endblock content %}
